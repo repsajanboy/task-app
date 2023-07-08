@@ -38,17 +38,25 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   Widget _buildTab(BuildContext context, CreateBottomTab state) {
     final items = state.items.map((type) => _getItem(type));
     return Scaffold(
-      body: const Center(
-        child: Text('Dashboard'),
+      backgroundColor: Colors.white70,
+      body: IndexedStack(
+        index: state.currentIndex,
+        children: items.map((e) => e.page).toList(),
       ),
-      bottomNavigationBar: DecoratedBox(
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        child: BottomNavigationBar(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(30))),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          child: BottomNavigationBar(
             backgroundColor: Colors.white,
             elevation: 10,
             type: BottomNavigationBarType.fixed,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            currentIndex: state.currentIndex,
             onTap: (int index) {
               BlocProvider.of<BottomTabBloc>(context)
                   .add(BottomTabChanged(index));
@@ -56,8 +64,17 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
             items: items
                 .map((e) => BottomNavigationBarItem(
                     icon: e.icon, label: e.title, activeIcon: e.activeIcon))
-                .toList()),
+                .toList(),
+          ),
+        ),
       ),
+      // floatingActionButtonLocation:
+      //     FloatingActionButtonLocation.miniCenterDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.indigoAccent,
+      //   onPressed: () {},
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 
@@ -65,34 +82,73 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
     switch (type) {
       case BottomTabItemType.dashboard:
         return BottomTabItem(
-            page: const Text('Dashboard'),
-            title: '',
-            icon: const Icon(Icons.dashboard),
-            activeIcon: const Icon(Icons.dashboard));
+          page: const Center(
+            child: Text(
+              'Dashboard',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          title: '',
+          icon: const Icon(Icons.widgets_rounded),
+          activeIcon: const Icon(Icons.widgets_rounded),
+        );
       case BottomTabItemType.tasks:
         return BottomTabItem(
-            page: const Text('Tasks'),
-            title: '',
-            icon: const Icon(Icons.list),
-            activeIcon: const Icon(Icons.list));
+          page: const Center(
+            child: Text(
+              'Tasks',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          title: '',
+          icon: const Icon(Icons.assignment_rounded),
+          activeIcon: const Icon(Icons.assignment_rounded),
+        );
+      case BottomTabItemType.add:
+        return BottomTabItem(
+          page: const SizedBox(),
+          title: '',
+          icon: const CircleAvatar(
+            backgroundColor: Colors.orangeAccent,
+            child: Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 32,
+            ),
+          ),
+          activeIcon: const Icon(Icons.add),
+        );
       case BottomTabItemType.calendar:
         return BottomTabItem(
-            page: const Text('Calendar'),
-            title: '',
-            icon: const Icon(Icons.calendar_month),
-            activeIcon: const Icon(Icons.calendar_month));
+          page: const Center(
+            child: Text(
+              'Calendar',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          title: '',
+          icon: const Icon(Icons.date_range_rounded),
+          activeIcon: const Icon(Icons.date_range_rounded),
+        );
       case BottomTabItemType.profile:
         return BottomTabItem(
-            page: const Text('Profile'),
-            title: '',
-            icon: const Icon(Icons.account_circle_outlined),
-            activeIcon: const Icon(Icons.account_circle_outlined));
+          page: const Center(
+            child: Text(
+              'Profile',
+              textAlign: TextAlign.center,
+            ),
+          ),
+          title: '',
+          icon: const Icon(Icons.person_rounded),
+          activeIcon: const Icon(Icons.account_circle_outlined),
+        );
       default:
         return BottomTabItem(
-            page: const SizedBox(),
-            title: '',
-            icon: const SizedBox(),
-            activeIcon: const SizedBox());
+          page: const SizedBox(),
+          title: '',
+          icon: const SizedBox(),
+          activeIcon: const SizedBox(),
+        );
     }
   }
 }
