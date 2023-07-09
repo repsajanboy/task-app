@@ -4,6 +4,7 @@ import 'package:task_app/presentation/bottom_tab/bloc/bottom_tab_bloc.dart';
 
 import '../bloc/bottom_tab_item.dart';
 import '../bloc/bottom_tab_item_type.dart';
+import '../../dashboard/dashboard.dart';
 
 class BottomNavBarPage extends StatefulWidget {
   final int currIndex;
@@ -38,7 +39,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   Widget _buildTab(BuildContext context, CreateBottomTab state) {
     final items = state.items.map((type) => _getItem(type));
     return Scaffold(
-      backgroundColor: Colors.white70,
+      //backgroundColor: Colors.white70,
       body: IndexedStack(
         index: state.currentIndex,
         children: items.map((e) => e.page).toList(),
@@ -46,8 +47,15 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       bottomNavigationBar: Container(
         margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(30))),
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black38,
+              blurRadius: 20.0,
+            )
+          ],
+        ),
         child: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(8.0)),
           child: BottomNavigationBar(
@@ -82,12 +90,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
     switch (type) {
       case BottomTabItemType.dashboard:
         return BottomTabItem(
-          page: const Center(
-            child: Text(
-              'Dashboard',
-              textAlign: TextAlign.center,
-            ),
-          ),
+          page: const DashboardPage(),
           title: '',
           icon: const Icon(Icons.widgets_rounded),
           activeIcon: const Icon(Icons.widgets_rounded),
