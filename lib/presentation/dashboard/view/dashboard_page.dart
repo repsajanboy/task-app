@@ -7,9 +7,49 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          children: [_dashboardHeader()],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _dashboardHeader(),
+            _dashboardMain(),
+          ],
         ),
+      ),
+    );
+  }
+
+  Widget _dashboardMain() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Text(
+              'You\'ve got 12 tasks today',
+              style: TextStyle(
+                fontFamily: 'Lato',
+                fontWeight: FontWeight.bold,
+                fontSize: 24.0
+              ),
+            ),
+          ),
+          Container(
+            height: 50,
+            child: const Text(
+              'Calendar Space'
+            ),
+          ),
+          Container(
+            child: Column(
+              children: [
+                Text('To do')
+              ],
+            ),
+          ),
+          SizedBox()
+        ],
       ),
     );
   }
@@ -32,9 +72,7 @@ class DashboardPage extends StatelessWidget {
                   Text(
                     greetingMessage(),
                     style: const TextStyle(
-                      fontFamily: 'Lato',
-                      color: Colors.black54
-                    ),
+                        fontFamily: 'Lato', color: Colors.black54),
                   ),
                   const Text(
                     'Jasper Janboy!',
