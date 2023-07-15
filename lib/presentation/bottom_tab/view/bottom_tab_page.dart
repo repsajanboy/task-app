@@ -45,14 +45,14 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         children: items.map((e) => e.page).toList(),
       ),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        margin: const EdgeInsets.only(left: 24, top: 24, right: 24, bottom: 12),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(30)),
           boxShadow: [
             BoxShadow(
               color: Colors.black38,
-              blurRadius: 20.0,
+              blurRadius: 10.0,
             )
           ],
         ),
@@ -93,7 +93,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           page: const DashboardPage(),
           title: '',
           icon: const Icon(Icons.widgets_rounded),
-          activeIcon: const Icon(Icons.widgets_rounded),
+          activeIcon: const Icon(Icons.widgets_rounded, color: Colors.black,),
         );
       case BottomTabItemType.tasks:
         return BottomTabItem(
@@ -105,7 +105,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           ),
           title: '',
           icon: const Icon(Icons.assignment_rounded),
-          activeIcon: const Icon(Icons.assignment_rounded),
+          activeIcon: const Icon(Icons.assignment_rounded, color: Colors.black,),
         );
       case BottomTabItemType.add:
         return BottomTabItem(
@@ -131,7 +131,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           ),
           title: '',
           icon: const Icon(Icons.date_range_rounded),
-          activeIcon: const Icon(Icons.date_range_rounded),
+          activeIcon: const Icon(Icons.date_range_rounded, color: Colors.black,),
         );
       case BottomTabItemType.profile:
         return BottomTabItem(
@@ -143,7 +143,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           ),
           title: '',
           icon: const Icon(Icons.person_rounded),
-          activeIcon: const Icon(Icons.account_circle_outlined),
+          activeIcon: const Icon(Icons.account_circle_outlined, color: Colors.black,),
         );
       default:
         return BottomTabItem(
