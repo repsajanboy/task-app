@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../style/colors.dart';
+import '../../../utils/custom_widgets/weekly_timeline/weekly_timeline_widget.dart';
+import '../../../utils/extensions/context_extension.dart';
+
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
 
@@ -10,50 +14,47 @@ class DashboardPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _dashboardHeader(),
-            Expanded(child: _dashboardMain()),
+            _dashboardHeader(context),
+            Expanded(
+              child: _dashboardMain(context),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _dashboardMain() {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 8.0),
-            child: Text(
-              'You\'ve got 12 tasks today',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontWeight: FontWeight.w700,
-                fontSize: 24.0,
-              ),
-            ),
+  Widget _dashboardMain(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0, bottom: 16.0, left: 24.0, right: 24.0),
+          child: Text('You\'ve got 12 tasks today',
+              style: context.typo.dashboardTitle()),
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .11,
+          child: WeeklyTimeline(
+            DateTime.now(),
           ),
-          const SizedBox(
-            height: 50,
-            child: Text('Calendar Space'),
-          ),
-          Expanded(
-            child: Column(
-              children: [
-                Row(
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        Expanded(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        const Text(
+                        Text(
                           'To do',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20.0,
-                          ),
+                          style: context.typo.dashboardTitle(),
                         ),
                         const SizedBox(
                           width: 16.0,
@@ -72,16 +73,17 @@ class DashboardPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Text(
+                    Text(
                       'See all',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: context.typo.dashboardGreyTexts(),
                     ),
                   ],
                 ),
-                Expanded(
+              ),
+              const SizedBox(height: 8.0),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: const [
@@ -219,26 +221,25 @@ class DashboardPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
-          const SizedBox(height: 32.0),
-          Expanded(
-            child: Column(
-              children: [
-                Row(
+        ),
+        const SizedBox(height: 16.0),
+        Expanded(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        const Text(
+                        Text(
                           'In progress',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20.0,
-                          ),
+                          style: context.typo.dashboardTitle(),
                         ),
                         const SizedBox(width: 16.0),
                         Container(
@@ -249,22 +250,23 @@ class DashboardPage extends StatelessWidget {
                                   BorderRadius.all(Radius.circular(8.0))),
                           padding: const EdgeInsets.all(8.0),
                           child: const Text(
-                            '7',
+                            '3',
                             style: TextStyle(color: Colors.white),
                           ),
                         )
                       ],
                     ),
-                    const Text(
+                    Text(
                       'See all',
-                      style: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: context.typo.dashboardGreyTexts(),
                     ),
                   ],
                 ),
-                Expanded(
+              ),
+              const SizedBox(height: 8.0),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: const [
@@ -403,17 +405,17 @@ class DashboardPage extends StatelessWidget {
                     ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
-  Widget _dashboardHeader() {
+  Widget _dashboardHeader(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -428,16 +430,11 @@ class DashboardPage extends StatelessWidget {
                 children: [
                   Text(
                     greetingMessage(),
-                    style: const TextStyle(
-                        fontFamily: 'Lato', color: Colors.black54),
+                    style: context.typo.dashboardGreyTexts(),
                   ),
-                  const Text(
+                  Text(
                     'Jasper Janboy!',
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
-                    ),
+                    style: context.typo.dashboardUser(),
                   ),
                 ],
               ),
@@ -445,11 +442,17 @@ class DashboardPage extends StatelessWidget {
           ),
           const Row(
             children: [
-              Icon(Icons.search_rounded),
+              Icon(
+                Icons.search_rounded,
+                color: AppColors.mainColor,
+              ),
               SizedBox(
                 width: 16.0,
               ),
-              Icon(Icons.notifications_rounded),
+              Icon(
+                Icons.notifications_outlined,
+                color: AppColors.mainColor,
+              ),
             ],
           )
         ],
@@ -461,13 +464,13 @@ class DashboardPage extends StatelessWidget {
     final timeNow = DateTime.now().toLocal().hour;
 
     if (timeNow <= 12) {
-      return 'Good Morning,';
+      return 'Good morning,';
     } else if ((timeNow > 12) && (timeNow <= 16)) {
-      return 'Good Afternoon,';
+      return 'Good afternoon,';
     } else if ((timeNow > 16) && (timeNow < 20)) {
-      return 'Good Evening,';
+      return 'Good evening,';
     } else {
-      return 'Good Night,';
+      return 'Good night,';
     }
   }
 }
