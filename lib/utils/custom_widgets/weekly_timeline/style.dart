@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 
+import '../../../style/colors.dart';
+
 const TextStyle defaultMonthTextStyle = TextStyle(
-  color: Colors.black,
+  color: AppColors.mainColor,
   fontSize: 11,
   fontWeight: FontWeight.w500,
+  fontFamily: 'Lato',
 );
 
 const TextStyle defaultDateTextStyle = TextStyle(
-  color: Colors.black,
+  color: AppColors.mainColor,
   fontSize: 24,
   fontWeight: FontWeight.w500,
+  fontFamily: 'Lato',
 );
 
 const TextStyle defaultDayTextStyle = TextStyle(
-  color: Colors.black,
+  color: AppColors.mainColor,
   fontSize: 11,
   fontWeight: FontWeight.w500,
+  fontFamily: 'Lato',
 );

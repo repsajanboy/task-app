@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_app/presentation/bottom_tab/bloc/bottom_tab_bloc.dart';
 
+import '../../../style/colors.dart';
 import '../bloc/bottom_tab_item.dart';
 import '../bloc/bottom_tab_item_type.dart';
 import '../../dashboard/dashboard.dart';
@@ -39,7 +40,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   Widget _buildTab(BuildContext context, CreateBottomTab state) {
     final items = state.items.map((type) => _getItem(type));
     return Scaffold(
-      //backgroundColor: Colors.white70,
+      backgroundColor: AppColors.background,
       body: IndexedStack(
         index: state.currentIndex,
         children: items.map((e) => e.page).toList(),

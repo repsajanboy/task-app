@@ -26,7 +26,7 @@ class DateWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
         decoration: BoxDecoration(
           color: selectionColor,
           borderRadius: const BorderRadius.all(
