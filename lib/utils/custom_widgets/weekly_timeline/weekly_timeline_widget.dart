@@ -94,7 +94,7 @@ class _WeeklyTimelineState extends State<WeeklyTimeline> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 24.0),
+      padding: const EdgeInsets.only(left: 16.0),
       child: ListView.builder(
         itemCount: widget.daysCount,
         scrollDirection: Axis.horizontal,

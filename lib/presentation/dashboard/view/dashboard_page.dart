@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../style/colors.dart';
 import '../../../utils/custom_widgets/weekly_timeline/weekly_timeline_widget.dart';
 import '../../../utils/extensions/context_extension.dart';
+import 'inprogress_horizontal_widget.dart';
+import 'todo_horizontal_widget.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -10,6 +12,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,9 +32,29 @@ class DashboardPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 8.0, bottom: 16.0, left: 24.0, right: 24.0),
-          child: Text('You\'ve got 12 tasks today',
-              style: context.typo.dashboardTitle()),
+          padding: const EdgeInsets.only(
+              top: 8.0, bottom: 16.0, left: 24.0, right: 24.0),
+          child: RichText(
+            text: TextSpan(
+              text: 'You\'ve got ',
+              style: context.typo.dashboardTitle(),
+              children: [
+                const TextSpan(
+                  text: '5 ',
+                  style: TextStyle(
+                    color: Colors.orangeAccent,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Lato',
+                    fontSize: 20.0,
+                  ),
+                ),
+                TextSpan(
+                  text: 'tasks today',
+                  style: context.typo.dashboardTitle(),
+                )
+              ],
+            ),
+          ),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * .11,
@@ -42,372 +65,12 @@ class DashboardPage extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        Expanded(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'To do',
-                          style: context.typo.dashboardTitle(),
-                        ),
-                        const SizedBox(
-                          width: 16.0,
-                        ),
-                        Container(
-                          decoration: const BoxDecoration(
-                              color: Colors.orangeAccent,
-                              shape: BoxShape.rectangle,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8.0))),
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Text(
-                            '7',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      'See all',
-                      style: context.typo.dashboardGreyTexts(),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: const [
-                      SizedBox(
-                        width: 200,
-                        child: Card(
-                          elevation: 10.0,
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Snapchat',
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Icon(Icons.border_color_outlined),
-                                  ],
-                                ),
-                                Text(
-                                  'Redesign Splash screen',
-                                  style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'till Mon, 7 March',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 200,
-                        child: Card(
-                          elevation: 10.0,
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Snapchat',
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Icon(Icons.border_color_outlined),
-                                  ],
-                                ),
-                                Text(
-                                  'Redesign Splash screen',
-                                  style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'till Mon, 7 March',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 200,
-                        child: Card(
-                          elevation: 10.0,
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Snapchat',
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Icon(Icons.border_color_outlined),
-                                  ],
-                                ),
-                                Text(
-                                  'Redesign Splash screen',
-                                  style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'till Mon, 7 March',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+        const Expanded(
+          child: ToDoHorizontalWidget(),
         ),
         const SizedBox(height: 16.0),
-        Expanded(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          'In progress',
-                          style: context.typo.dashboardTitle(),
-                        ),
-                        const SizedBox(width: 16.0),
-                        Container(
-                          decoration: const BoxDecoration(
-                              color: Colors.orangeAccent,
-                              shape: BoxShape.rectangle,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(8.0))),
-                          padding: const EdgeInsets.all(8.0),
-                          child: const Text(
-                            '3',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        )
-                      ],
-                    ),
-                    Text(
-                      'See all',
-                      style: context.typo.dashboardGreyTexts(),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 24.0),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: const [
-                      SizedBox(
-                        width: 280,
-                        child: Card(
-                          elevation: 10.0,
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Snapchat',
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Icon(Icons.border_color_outlined),
-                                  ],
-                                ),
-                                Text(
-                                  'Redesign Splash screen',
-                                  style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'till Mon, 7 March',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 200,
-                        child: Card(
-                          elevation: 10.0,
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Snapchat',
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Icon(Icons.border_color_outlined),
-                                  ],
-                                ),
-                                Text(
-                                  'Redesign Splash screen',
-                                  style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'till Mon, 7 March',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 200,
-                        child: Card(
-                          elevation: 10.0,
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Snapchat',
-                                      style: TextStyle(
-                                        color: Colors.black54,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Icon(Icons.border_color_outlined),
-                                  ],
-                                ),
-                                Text(
-                                  'Redesign Splash screen',
-                                  style: TextStyle(
-                                    fontFamily: 'Lato',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 24,
-                                  ),
-                                ),
-                                Text(
-                                  'till Mon, 7 March',
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+        const Expanded(
+          child: InProgressHorizontalWidget(),
         ),
       ],
     );
@@ -421,7 +84,9 @@ class DashboardPage extends StatelessWidget {
         children: [
           Row(
             children: [
-              const CircleAvatar(),
+              const CircleAvatar(
+                backgroundImage: AssetImage('assets/images/avatar.jpeg'),
+              ),
               const SizedBox(
                 width: 8.0,
               ),
