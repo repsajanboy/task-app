@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_app/presentation/bottom_tab/bloc/bottom_tab_bloc.dart';
 
+import '../../../routing/app_router_names.dart';
 import '../../../style/colors.dart';
 import '../bloc/bottom_tab_item.dart';
 import '../bloc/bottom_tab_item_type.dart';
@@ -67,6 +68,9 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
             showUnselectedLabels: false,
             currentIndex: state.currentIndex,
             onTap: (int index) {
+              if(index == 2) {
+                Navigator.pushNamed(context, RouteNames.createTask);
+              }
               BlocProvider.of<BottomTabBloc>(context)
                   .add(BottomTabChanged(index));
             },

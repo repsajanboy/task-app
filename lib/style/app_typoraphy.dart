@@ -28,4 +28,13 @@ class AppTextStyle {
       fontFamily: 'Lato'
     );
   }
+
+  TextStyle createTaskLabels() {
+    return const TextStyle(
+      fontSize: 16.0,
+      color: AppColors.mainColor,
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Lato'
+    );
+  }
 }
