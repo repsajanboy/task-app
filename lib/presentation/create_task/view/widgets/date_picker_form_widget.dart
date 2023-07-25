@@ -50,7 +50,7 @@ class DatePickerFormWidget extends StatelessWidget {
                     ),
                     Icon(
                       Icons.calendar_month_outlined,
-                      color: Colors.black54,
+                      color: Colors.orangeAccent,
                     )
                   ],
                 ),
@@ -99,7 +99,7 @@ class DatePickerFormWidget extends StatelessWidget {
                     ),
                     Icon(
                       Icons.calendar_month_outlined,
-                      color: Colors.black54,
+                      color: Colors.orangeAccent,
                     )
                   ],
                 ),

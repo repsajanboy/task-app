@@ -29,6 +29,7 @@ dependencies:
   flutter_bloc: ^8.1.3
   font_awesome_flutter: ^10.5.0
   intl: ^0.18.1
+  syncfusion_flutter_calendar: ^22.1.39
 
 dev_dependencies:
   flutter_lints: ^2.0.0
