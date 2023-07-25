@@ -4,6 +4,7 @@ import 'package:task_app/presentation/bottom_tab/bloc/bottom_tab_bloc.dart';
 
 import '../../../routing/app_router_names.dart';
 import '../../../style/colors.dart';
+import '../../calendar/calendar.dart';
 import '../bloc/bottom_tab_item.dart';
 import '../bloc/bottom_tab_item_type.dart';
 import '../../dashboard/dashboard.dart';
@@ -128,12 +129,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         );
       case BottomTabItemType.calendar:
         return BottomTabItem(
-          page: const Center(
-            child: Text(
-              'Calendar',
-              textAlign: TextAlign.center,
-            ),
-          ),
+          page: const CalendarPage(),
           title: '',
           icon: const Icon(Icons.date_range_rounded),
           activeIcon: const Icon(Icons.date_range_rounded, color: Colors.black,),

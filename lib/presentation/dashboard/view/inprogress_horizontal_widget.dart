@@ -99,9 +99,18 @@ class InProgressHorizontalWidget extends StatelessWidget {
                             backgroundColor: AppColors.background,
                             color: Colors.orangeAccent,
                           ),
-                          Text(
-                            'till ${DateFormat("E", "en_US").format(taskInProgress[index].dueDate)}, ${DateFormat("d", "en_US").format(taskInProgress[index].dueDate)} ${DateFormat("LLLL", "en_US").format(taskInProgress[index].dueDate)}',
-                            style: context.typo.dashboardGreyTexts(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'till ${DateFormat("E", "en_US").format(taskInProgress[index].dueDate)}, ${DateFormat("d", "en_US").format(taskInProgress[index].dueDate)} ${DateFormat("LLLL", "en_US").format(taskInProgress[index].dueDate)}',
+                                style: context.typo.dashboardGreyTexts(),
+                              ),
+                              Text(
+                                '${taskInProgress[index].progress}%',
+                                style: context.typo.dashboardGreyTexts(),
+                              ),
+                            ],
                           ),
                         ],
                       ),

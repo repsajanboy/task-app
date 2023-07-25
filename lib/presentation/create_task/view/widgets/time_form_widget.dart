@@ -43,7 +43,10 @@ class TimeFormWidget extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              Icon(Icons.access_time_outlined, color: Colors.black54,)
+              Icon(
+                Icons.access_time_outlined,
+                color: Colors.orangeAccent,
+              )
             ],
           ),
         ),
