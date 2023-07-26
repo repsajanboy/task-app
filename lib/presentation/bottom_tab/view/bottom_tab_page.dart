@@ -5,6 +5,7 @@ import 'package:task_app/presentation/bottom_tab/bloc/bottom_tab_bloc.dart';
 import '../../../routing/app_router_names.dart';
 import '../../../style/colors.dart';
 import '../../calendar/calendar.dart';
+import '../../tasks/task_list.dart';
 import '../bloc/bottom_tab_item.dart';
 import '../bloc/bottom_tab_item_type.dart';
 import '../../dashboard/dashboard.dart';
@@ -103,12 +104,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         );
       case BottomTabItemType.tasks:
         return BottomTabItem(
-          page: const Center(
-            child: Text(
-              'Tasks',
-              textAlign: TextAlign.center,
-            ),
-          ),
+          page: const TaskListPage(),
           title: '',
           icon: const Icon(Icons.assignment_rounded),
           activeIcon: const Icon(Icons.assignment_rounded, color: Colors.black,),
