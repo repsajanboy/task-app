@@ -5,6 +5,7 @@ import 'package:task_app/presentation/bottom_tab/bloc/bottom_tab_bloc.dart';
 import '../../../routing/app_router_names.dart';
 import '../../../style/colors.dart';
 import '../../calendar/calendar.dart';
+import '../../profile/profile.dart';
 import '../../tasks/task_list.dart';
 import '../bloc/bottom_tab_item.dart';
 import '../bloc/bottom_tab_item_type.dart';
@@ -132,15 +133,10 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         );
       case BottomTabItemType.profile:
         return BottomTabItem(
-          page: const Center(
-            child: Text(
-              'Profile',
-              textAlign: TextAlign.center,
-            ),
-          ),
+          page: const ProfilePage(),
           title: '',
           icon: const Icon(Icons.person_rounded),
-          activeIcon: const Icon(Icons.account_circle_outlined, color: Colors.black,),
+          activeIcon: const Icon(Icons.person_rounded, color: Colors.black,),
         );
       default:
         return BottomTabItem(
