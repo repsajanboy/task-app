@@ -95,6 +95,7 @@ class _WeeklyTimelineState extends State<WeeklyTimeline> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 16.0),
+      margin: const EdgeInsets.only(bottom: 4.0),
       child: ListView.builder(
         itemCount: widget.daysCount,
         scrollDirection: Axis.horizontal,
@@ -153,7 +154,7 @@ class _WeeklyTimelineState extends State<WeeklyTimeline> {
             width: widget.width,
             locale: widget.locale,
             selectionColor:
-                isSelected ? widget.selectionColor : Colors.white,
+                isSelected ? widget.selectionColor : AppColors.widgetBackground,
             onDateSelected: (selectedDate) {
               // Don't notify listener if date is deactivated
               if (isDeactivated) return;

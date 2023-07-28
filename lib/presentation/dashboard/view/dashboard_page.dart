@@ -42,7 +42,7 @@ class DashboardPage extends StatelessWidget {
                 const TextSpan(
                   text: '5 ',
                   style: TextStyle(
-                    color: Colors.orangeAccent,
+                    color: AppColors.accentColor,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Lato',
                     fontSize: 20.0,
@@ -57,7 +57,7 @@ class DashboardPage extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * .11,
+          height: MediaQuery.of(context).size.height * .12,
           child: WeeklyTimeline(
             DateTime.now(),
           ),

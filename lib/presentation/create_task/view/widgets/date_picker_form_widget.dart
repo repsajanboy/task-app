@@ -19,7 +19,7 @@ class DatePickerFormWidget extends StatelessWidget {
                 style: context.typo.createTaskLabels(),
               ),
               const SizedBox(
-                height: 4.0,
+                height: 12.0,
               ),
               Container(
                 height: 50,
@@ -33,24 +33,32 @@ class DatePickerFormWidget extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 10.0,
-                        offset: Offset(4, 8))
+                      color: Color(0xff1c1d1f),
+                      offset: Offset(4, 4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                    BoxShadow(
+                      color: Color(0xff2e3034),
+                      offset: Offset(-4, -4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
                   ],
                 ),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'July 22',
+                      'July 24',
                       style: TextStyle(
-                        color: Colors.black54,
+                        color: AppColors.greyColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Icon(
                       Icons.calendar_month_outlined,
-                      color: Colors.orangeAccent,
+                      color: AppColors.accentColor,
                     )
                   ],
                 ),
@@ -68,7 +76,7 @@ class DatePickerFormWidget extends StatelessWidget {
                 style: context.typo.createTaskLabels(),
               ),
               const SizedBox(
-                height: 4.0,
+                height: 12.0,
               ),
               Container(
                 height: 50,
@@ -82,24 +90,32 @@ class DatePickerFormWidget extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 10.0,
-                        offset: Offset(4, 8))
+                      color: Color(0xff1c1d1f),
+                      offset: Offset(4, 4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                    BoxShadow(
+                      color: Color(0xff2e3034),
+                      offset: Offset(-4, -4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
                   ],
                 ),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'July 26',
+                      'July 30',
                       style: TextStyle(
-                        color: Colors.black54,
+                        color: AppColors.greyColor,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Icon(
                       Icons.calendar_month_outlined,
-                      color: Colors.orangeAccent,
+                      color: AppColors.accentColor,
                     )
                   ],
                 ),

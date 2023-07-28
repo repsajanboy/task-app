@@ -52,26 +52,34 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       bottomNavigationBar: Container(
         margin: const EdgeInsets.only(left: 24, top: 24, right: 24, bottom: 12),
         decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+          color: AppColors.widgetBackground,
+          borderRadius: BorderRadius.all(Radius.circular(16)),
           boxShadow: [
             BoxShadow(
-              color: Colors.black38,
-              blurRadius: 10.0,
-            )
+              color: Color(0xff1c1d1f),
+              offset: Offset(4, 4),
+              blurRadius: 4.0,
+              spreadRadius: 1,
+            ),
+            BoxShadow(
+              color: Color(0xff2e3034),
+              offset: Offset(-4, -4),
+              blurRadius: 4.0,
+              spreadRadius: 1,
+            ),
           ],
         ),
         child: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(8.0)),
           child: BottomNavigationBar(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.widgetBackground,
             elevation: 10,
             type: BottomNavigationBarType.fixed,
             showSelectedLabels: false,
             showUnselectedLabels: false,
             currentIndex: state.currentIndex,
             onTap: (int index) {
-              if(index == 2) {
+              if (index == 2) {
                 Navigator.pushNamed(context, RouteNames.createTask);
               }
               BlocProvider.of<BottomTabBloc>(context)
@@ -85,7 +93,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         ),
       ),
       // floatingActionButtonLocation:
-      //     FloatingActionButtonLocation.miniCenterDocked,
+      //     FloatingActionButtonLocation.endContained,
       // floatingActionButton: FloatingActionButton(
       //   backgroundColor: Colors.indigoAccent,
       //   onPressed: () {},
@@ -100,22 +108,34 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         return BottomTabItem(
           page: const DashboardPage(),
           title: '',
-          icon: const Icon(Icons.widgets_rounded),
-          activeIcon: const Icon(Icons.widgets_rounded, color: Colors.black,),
+          icon: const Icon(
+            Icons.widgets_rounded,
+            color: AppColors.bottomNavItemColor,
+          ),
+          activeIcon: const Icon(
+            Icons.widgets_rounded,
+            color: AppColors.bottomNavItemActiveColor,
+          ),
         );
       case BottomTabItemType.tasks:
         return BottomTabItem(
           page: const TaskListPage(),
           title: '',
-          icon: const Icon(Icons.assignment_rounded),
-          activeIcon: const Icon(Icons.assignment_rounded, color: Colors.black,),
+          icon: const Icon(
+            Icons.assignment_rounded,
+            color: AppColors.bottomNavItemColor,
+          ),
+          activeIcon: const Icon(
+            Icons.assignment_rounded,
+            color: AppColors.bottomNavItemActiveColor,
+          ),
         );
       case BottomTabItemType.add:
         return BottomTabItem(
           page: const SizedBox(),
           title: '',
           icon: const CircleAvatar(
-            backgroundColor: Colors.orangeAccent,
+            backgroundColor: AppColors.accentColor,
             child: Icon(
               Icons.add,
               color: Colors.white,
@@ -128,15 +148,27 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         return BottomTabItem(
           page: const CalendarPage(),
           title: '',
-          icon: const Icon(Icons.date_range_rounded),
-          activeIcon: const Icon(Icons.date_range_rounded, color: Colors.black,),
+          icon: const Icon(
+            Icons.date_range_rounded,
+            color: AppColors.bottomNavItemColor,
+          ),
+          activeIcon: const Icon(
+            Icons.date_range_rounded,
+            color: AppColors.bottomNavItemActiveColor,
+          ),
         );
       case BottomTabItemType.profile:
         return BottomTabItem(
           page: const ProfilePage(),
           title: '',
-          icon: const Icon(Icons.person_rounded),
-          activeIcon: const Icon(Icons.person_rounded, color: Colors.black,),
+          icon: const Icon(
+            Icons.person_rounded,
+            color: AppColors.bottomNavItemColor,
+          ),
+          activeIcon: const Icon(
+            Icons.person_rounded,
+            color: AppColors.bottomNavItemActiveColor,
+          ),
         );
       default:
         return BottomTabItem(

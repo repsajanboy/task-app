@@ -34,9 +34,16 @@ class DateWidget extends StatelessWidget {
           ),
           boxShadow: const [
             BoxShadow(
-              color: Colors.black26,
-              blurRadius: 5.0,
-              offset: Offset(3, 4),
+              color: Color(0xff1c1d1f),
+              offset: Offset(4, 4),
+              blurRadius: 4.0,
+              spreadRadius: 1,
+            ),
+            BoxShadow(
+              color: Color(0xff2e3034),
+              offset: Offset(-4, -4),
+              blurRadius: 4.0,
+              spreadRadius: 1,
             ),
           ],
         ),

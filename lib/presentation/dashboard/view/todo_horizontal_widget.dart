@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../data/tasks/task.dart';
+import '../../../style/colors.dart';
 import '../../../utils/extensions/context_extension.dart';
 
 class ToDoHorizontalWidget extends StatelessWidget {
@@ -27,7 +28,7 @@ class ToDoHorizontalWidget extends StatelessWidget {
                   ),
                   Container(
                     decoration: const BoxDecoration(
-                        color: Colors.orangeAccent,
+                        color: AppColors.accentColor,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.all(Radius.circular(8.0))),
                     padding: const EdgeInsets.all(8.0),
@@ -51,7 +52,7 @@ class ToDoHorizontalWidget extends StatelessWidget {
         const SizedBox(height: 8.0),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.only(left: 24.0),
+            padding: const EdgeInsets.only(left: 20.0),
             child: ListView.builder(
               itemCount: tasks
                   .where((element) => element.status == TaskStatus.todo)
@@ -63,13 +64,27 @@ class ToDoHorizontalWidget extends StatelessWidget {
                     .toList();
                 return Container(
                   width: MediaQuery.of(context).size.width * .5,
-                  margin: const EdgeInsets.only(right: 8.0),
-                  child: Card(
-                    elevation: 10.0,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16.0),
-                      ),
+                  margin: const EdgeInsets.only(
+                      left: 8.0, right: 16.0, bottom: 12.0),
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.widgetBackground,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xff1c1d1f),
+                          offset: Offset(4, 4),
+                          blurRadius: 4.0,
+                          spreadRadius: 1,
+                        ),
+                        BoxShadow(
+                          color: Color(0xff2e3034),
+                          offset: Offset(-4, -4),
+                          blurRadius: 4.0,
+                          spreadRadius: 1,
+                        ),
+                      ],
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
@@ -86,7 +101,7 @@ class ToDoHorizontalWidget extends StatelessWidget {
                               ),
                               const Icon(
                                 Icons.border_color_outlined,
-                                color: Colors.orangeAccent,
+                                color: AppColors.accentColor,
                               ),
                             ],
                           ),

@@ -31,12 +31,27 @@ class CalendarPage extends StatelessWidget {
                 child: SfCalendar(
                   dataSource: MeetingDataSource(_getDataSource()),
                   view: CalendarView.month,
-                  todayHighlightColor: AppColors.mainColor,
+                  todayHighlightColor: AppColors.accentColor,
                   cellBorderColor: Colors.transparent,
-                  showDatePickerButton: true,
                   minDate: DateTime(2020, 01, 01, 07, 0, 0),
                   selectionDecoration: BoxDecoration(
-                      border: Border.all(color: AppColors.mainColor)),
+                    border: Border.all(
+                      color: AppColors.accentColor,
+                    ),
+                  ),
+                  headerStyle: const CalendarHeaderStyle(
+                    textStyle: TextStyle(
+                      color: AppColors.mainColor,
+                    ),
+                  ),
+                  viewHeaderStyle: const ViewHeaderStyle(
+                    dateTextStyle: TextStyle(
+                      color: AppColors.mainColor,
+                    ),
+                    dayTextStyle: TextStyle(
+                      color: AppColors.mainColor,
+                    ),
+                  ),
                   monthViewSettings: const MonthViewSettings(
                     dayFormat: 'EEE',
                     navigationDirection: MonthNavigationDirection.horizontal,
@@ -44,6 +59,24 @@ class CalendarPage extends StatelessWidget {
                     showAgenda: true,
                     agendaItemHeight: 70,
                     showTrailingAndLeadingDates: false,
+                    agendaStyle: AgendaStyle(
+                      appointmentTextStyle: TextStyle(
+                        fontSize: 14,
+                        fontStyle: FontStyle.italic,
+                        color: AppColors.mainColor,
+                      ),
+                      dateTextStyle: TextStyle(
+                        color: AppColors.mainColor,
+                      ),
+                      dayTextStyle: TextStyle(
+                        color: AppColors.mainColor,
+                      ),
+                    ),
+                    monthCellStyle: MonthCellStyle(
+                      textStyle: TextStyle(
+                        color: AppColors.mainColor,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -61,7 +94,7 @@ class CalendarPage extends StatelessWidget {
         eventName: e.title,
         startTime: e.startTime,
         endTime: e.endTime,
-        background: AppColors.mainColor,
+        background: AppColors.accentColor,
       ));
     }
     return meetings;

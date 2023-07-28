@@ -23,7 +23,7 @@ class AppTextStyle {
 
   TextStyle dashboardGreyTexts() {
     return const TextStyle(
-      color: Colors.black54,
+      color: AppColors.greyColor,
       fontWeight: FontWeight.w500,
       fontFamily: 'Lato'
     );

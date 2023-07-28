@@ -54,13 +54,20 @@ class ProfilePage extends StatelessWidget {
                           width: 80.0,
                           height: 80.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(18.0),
+                            color: AppColors.widgetBackground,
+                            borderRadius: BorderRadius.circular(16.0),
                             boxShadow: const [
                               BoxShadow(
-                                color: Colors.black45,
-                                blurRadius: 10,
-                                offset: Offset(4, 8), // Shadow position
+                                color: Color(0xff1c1d1f),
+                                offset: Offset(4, 4),
+                                blurRadius: 4.0,
+                                spreadRadius: 1,
+                              ),
+                              BoxShadow(
+                                color: Color(0xff2e3034),
+                                offset: Offset(-4, -4),
+                                blurRadius: 4.0,
+                                spreadRadius: 1,
                               ),
                             ],
                           ),
@@ -82,13 +89,20 @@ class ProfilePage extends StatelessWidget {
                           width: 80.0,
                           height: 80.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(18.0),
+                            color: AppColors.widgetBackground,
+                            borderRadius: BorderRadius.circular(16.0),
                             boxShadow: const [
                               BoxShadow(
-                                color: Colors.black45,
-                                blurRadius: 10,
-                                offset: Offset(4, 8), // Shadow position
+                                color: Color(0xff1c1d1f),
+                                offset: Offset(4, 4),
+                                blurRadius: 4.0,
+                                spreadRadius: 1,
+                              ),
+                              BoxShadow(
+                                color: Color(0xff2e3034),
+                                offset: Offset(-4, -4),
+                                blurRadius: 4.0,
+                                spreadRadius: 1,
                               ),
                             ],
                           ),
@@ -110,13 +124,20 @@ class ProfilePage extends StatelessWidget {
                           width: 80.0,
                           height: 80.0,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(18.0),
+                            color: AppColors.widgetBackground,
+                            borderRadius: BorderRadius.circular(16.0),
                             boxShadow: const [
                               BoxShadow(
-                                color: Colors.black45,
-                                blurRadius: 10,
-                                offset: Offset(4, 8), // Shadow position
+                                color: Color(0xff1c1d1f),
+                                offset: Offset(4, 4),
+                                blurRadius: 4.0,
+                                spreadRadius: 1,
+                              ),
+                              BoxShadow(
+                                color: Color(0xff2e3034),
+                                offset: Offset(-4, -4),
+                                blurRadius: 4.0,
+                                spreadRadius: 1,
                               ),
                             ],
                           ),
@@ -147,10 +168,25 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 4.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              decoration: const BoxDecoration(
-                color: Colors.white60,
+              decoration: BoxDecoration(
+                color: AppColors.widgetBackground,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xff1c1d1f),
+                    offset: Offset(4, 4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                  BoxShadow(
+                    color: Color(0xff2e3034),
+                    offset: Offset(-4, -4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                ],
               ),
               child: ListTile(
                 leading: const SizedBox(
@@ -174,17 +210,32 @@ class ProfilePage extends StatelessWidget {
                 ),
                 trailing: const Icon(
                   Icons.chevron_right_rounded,
-                  color: Colors.orangeAccent,
+                  color: AppColors.accentColor,
                   size: 30.0,
                 ),
                 onTap: () {},
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 4.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              decoration: const BoxDecoration(
-                color: Colors.white60,
+              decoration: BoxDecoration(
+                color: AppColors.widgetBackground,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xff1c1d1f),
+                    offset: Offset(4, 4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                  BoxShadow(
+                    color: Color(0xff2e3034),
+                    offset: Offset(-4, -4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                ],
               ),
               child: ListTile(
                 leading: const SizedBox(
@@ -208,17 +259,32 @@ class ProfilePage extends StatelessWidget {
                 ),
                 trailing: const Icon(
                   Icons.chevron_right_rounded,
-                  color: Colors.orangeAccent,
+                  color: AppColors.accentColor,
                   size: 30.0,
                 ),
                 onTap: () {},
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 4.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              decoration: const BoxDecoration(
-                color: Colors.white60,
+              decoration: BoxDecoration(
+                color: AppColors.widgetBackground,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xff1c1d1f),
+                    offset: Offset(4, 4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                  BoxShadow(
+                    color: Color(0xff2e3034),
+                    offset: Offset(-4, -4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                ],
               ),
               child: ListTile(
                 leading: const SizedBox(
@@ -242,17 +308,32 @@ class ProfilePage extends StatelessWidget {
                 ),
                 trailing: const Icon(
                   Icons.chevron_right_rounded,
-                  color: Colors.orangeAccent,
+                  color: AppColors.accentColor,
                   size: 30.0,
                 ),
                 onTap: () {},
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 4.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              decoration: const BoxDecoration(
-                color: Colors.white60,
+              decoration: BoxDecoration(
+                color: AppColors.widgetBackground,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xff1c1d1f),
+                    offset: Offset(4, 4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                  BoxShadow(
+                    color: Color(0xff2e3034),
+                    offset: Offset(-4, -4),
+                    blurRadius: 4.0,
+                    spreadRadius: 1,
+                  ),
+                ],
               ),
               child: ListTile(
                 leading: const SizedBox(
@@ -276,7 +357,7 @@ class ProfilePage extends StatelessWidget {
                 ),
                 trailing: const Icon(
                   Icons.chevron_right_rounded,
-                  color: Colors.orangeAccent,
+                  color: AppColors.accentColor,
                   size: 30.0,
                 ),
                 onTap: () {},
