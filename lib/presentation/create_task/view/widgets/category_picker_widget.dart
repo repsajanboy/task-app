@@ -16,9 +16,9 @@ class CategoryPickerWidget extends StatelessWidget {
           style: context.typo.createTaskLabels(),
         ),
         const SizedBox(
-          height: 4.0,
+          height: 12.0,
         ),
-        const Align(
+        Align(
           alignment: Alignment.topLeft,
           child: Wrap(
             crossAxisAlignment: WrapCrossAlignment.start,
@@ -26,36 +26,113 @@ class CategoryPickerWidget extends StatelessWidget {
             runSpacing: 12.0,
             direction: Axis.horizontal,
             children: [
-              Chip(
-                labelPadding: EdgeInsets.all(8.0),
-                label: Text("Task App"),
-                labelStyle: TextStyle(color: Colors.white),
-                elevation: 5.0,
-                backgroundColor: AppColors.mainColor,
-              ),
-              Chip(
-                labelPadding: EdgeInsets.all(8.0),
-                label: Text("Project X"),
-                labelStyle: TextStyle(color: Colors.black54),
-                elevation: 5.0,
-              ),
-              Chip(
-                labelPadding: EdgeInsets.all(8.0),
-                label: Text("Meeting"),
-                labelStyle: TextStyle(color: Colors.black54),
-                elevation: 5.0,
-              ),
-              Chip(
-                labelPadding: EdgeInsets.all(8.0),
-                label: SizedBox(
-                  width: 44.0,
-                  child: Text(
-                    "Dev",
-                    textAlign: TextAlign.center,
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  color: AppColors.accentColor,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32.0),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xff1c1d1f),
+                      offset: Offset(4, 4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                    BoxShadow(
+                      color: Color(0xff2e3034),
+                      offset: Offset(-4, -4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                  ],
                 ),
-                labelStyle: TextStyle(color: Colors.black54),
-                elevation: 5.0,
+                child: const Text(
+                  'Task App',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  color: AppColors.widgetBackground,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xff1c1d1f),
+                      offset: Offset(4, 4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                    BoxShadow(
+                      color: Color(0xff2e3034),
+                      offset: Offset(-4, -4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                child: const Text(
+                  'Project X',
+                  style: TextStyle(color: AppColors.greyColor),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  color: AppColors.widgetBackground,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xff1c1d1f),
+                      offset: Offset(4, 4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                    BoxShadow(
+                      color: Color(0xff2e3034),
+                      offset: Offset(-4, -4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                child: const Text(
+                  'Meeting',
+                  style: TextStyle(color: AppColors.greyColor),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: const BoxDecoration(
+                  color: AppColors.widgetBackground,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(32.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xff1c1d1f),
+                      offset: Offset(4, 4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                    BoxShadow(
+                      color: Color(0xff2e3034),
+                      offset: Offset(-4, -4),
+                      blurRadius: 4.0,
+                      spreadRadius: 1,
+                    ),
+                  ],
+                ),
+                child: const Text(
+                  'Dev',
+                  style: TextStyle(color: AppColors.greyColor),
+                ),
               ),
             ],
           ),

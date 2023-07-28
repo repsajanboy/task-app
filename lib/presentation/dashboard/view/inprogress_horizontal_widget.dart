@@ -25,7 +25,7 @@ class InProgressHorizontalWidget extends StatelessWidget {
                   const SizedBox(width: 16.0),
                   Container(
                     decoration: const BoxDecoration(
-                        color: Colors.orangeAccent,
+                        color: AppColors.accentColor,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.all(Radius.circular(8.0))),
                     padding: const EdgeInsets.all(8.0),
@@ -62,13 +62,27 @@ class InProgressHorizontalWidget extends StatelessWidget {
                     .toList();
                 return Container(
                   width: MediaQuery.of(context).size.width * .75,
-                  margin: const EdgeInsets.only(right: 8.0),
-                  child: Card(
-                    elevation: 10.0,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16.0),
-                      ),
+                  margin: const EdgeInsets.only(
+                      left: 8.0, right: 16.0, bottom: 12.0),
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.widgetBackground,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xff1c1d1f),
+                          offset: Offset(4, 4),
+                          blurRadius: 4.0,
+                          spreadRadius: 1,
+                        ),
+                        BoxShadow(
+                          color: Color(0xff2e3034),
+                          offset: Offset(-4, -4),
+                          blurRadius: 4.0,
+                          spreadRadius: 1,
+                        ),
+                      ],
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
@@ -86,7 +100,7 @@ class InProgressHorizontalWidget extends StatelessWidget {
                               const Icon(
                                 Icons.more_horiz_outlined,
                                 size: 32,
-                                color: Colors.orangeAccent,
+                                color: AppColors.accentColor,
                               ),
                             ],
                           ),
@@ -97,7 +111,7 @@ class InProgressHorizontalWidget extends StatelessWidget {
                           LinearProgressIndicator(
                             value: taskInProgress[index].progress / 100,
                             backgroundColor: AppColors.background,
-                            color: Colors.orangeAccent,
+                            color: AppColors.accentColor,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

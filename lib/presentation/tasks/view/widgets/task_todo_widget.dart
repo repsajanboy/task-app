@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../data/tasks/task.dart';
+import '../../../../style/colors.dart';
 import '../../../../utils/extensions/context_extension.dart';
 
 class TaskTodoWidget extends StatelessWidget {
@@ -23,14 +24,13 @@ class TaskTodoWidget extends StatelessWidget {
               const SizedBox(width: 16.0),
               Container(
                 decoration: const BoxDecoration(
-                    color: Colors.orangeAccent,
+                    color: AppColors.accentColor,
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.all(Radius.circular(8.0))),
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   tasks
-                      .where((element) =>
-                          element.status == TaskStatus.todo)
+                      .where((element) => element.status == TaskStatus.todo)
                       .length
                       .toString(),
                   style: const TextStyle(color: Colors.white),
@@ -53,12 +53,24 @@ class TaskTodoWidget extends StatelessWidget {
                     .toList();
                 return Container(
                   margin: const EdgeInsets.symmetric(vertical: 12.0),
-                  child: Card(
-                    elevation: 10.0,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16.0),
-                      ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.widgetBackground,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xff1c1d1f),
+                          offset: Offset(4, 4),
+                          blurRadius: 4.0,
+                          spreadRadius: 1,
+                        ),
+                        BoxShadow(
+                          color: Color(0xff2e3034),
+                          offset: Offset(-4, -4),
+                          blurRadius: 4.0,
+                          spreadRadius: 1,
+                        ),
+                      ],
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
@@ -75,7 +87,7 @@ class TaskTodoWidget extends StatelessWidget {
                               ),
                               const Icon(
                                 Icons.border_color_outlined,
-                                color: Colors.orangeAccent,
+                                color: AppColors.accentColor,
                               ),
                             ],
                           ),
